@@ -1,10 +1,12 @@
 package com.driver;
 
-public class Boat extends Car implements WaterVehicle {
+public class Boat extends Vehicle implements WaterVehicle {
 
+    private int capacity;
 
-    public Boat(String name,  int gears, boolean isManual, int seats) {
-        super(name, 0, 2, gears, isManual, "Boat", seats);
+    public Boat(String name,int capacity) {
+        super(name);
+        this.capacity=capacity;
     }
 
     @Override
@@ -14,6 +16,6 @@ public class Boat extends Car implements WaterVehicle {
 
     @Override
     public int getVehicleCapacity() {
-        return this.getSeats();
+        return capacity;
     }
 }
